@@ -2,12 +2,14 @@
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{ hero.id }}</span>
-      {{ hero.name }} <br>
-      lvl: {{ hero.powerLevel }}|
-      align.:{{ hero.alignment }}|
-      movie: {{ hero.hasOwnMovie }}|
-    </a>
+    <div class="hero-card" (click)="onHeroClick(hero)">
+      <h3>{{ hero.name }}</h3>
+      <div class="hero-data">
+        <p><b>id:</b> {{ hero.id }}</p>
+        <p><b>lvl:</b> {{ hero.powerLevel }}</p>
+        <p><b>align:</b> {{ hero.alignment }}</p>
+        <p><b>movie:</b> {{ hero.hasOwnMovie }}</p>
+      </div>
+    </div>
   </li>
 </ul>
