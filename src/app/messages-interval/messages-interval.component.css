@@ -1,7 +1,9 @@
 /* MessagesComponent's private CSS styles */
 .message-box {
   background-color: #eee;
-  padding: 8px;
+  padding: 12px;
+  margin: 0 12px;
+  min-width: 250px;
 }
 h2 {
   color: red;
@@ -26,7 +28,6 @@ button.clear {
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
-  margin-right: 8px;
 }
 button:hover {
   background-color: #14acf6;

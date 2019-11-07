@@ -8,6 +8,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroFilterComponent } from './heroes/hero-filter/hero-filter.component';
+import { MessagesIntervalComponent } from './messages-interval/messages-interval.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroFilterComponent,
+    MessagesIntervalComponent
   ],
   imports: [
     BrowserModule,

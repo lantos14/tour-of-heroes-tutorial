@@ -14,7 +14,7 @@
       <span>alignment: {{ hero.alignment }}</span>
     </div>
     <div>
-      <span>hasOwnMovie: {{ hero.hasOwnMovie }}</span>
+      <span>hasOwnMovie: {{ hero.hasOwnMovie ? "Yes" : "No" }}</span>
     </div>
     <button (click)="goBack()">Go back</button>
 </div>

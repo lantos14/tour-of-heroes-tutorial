@@ -1,0 +1,14 @@
+<div class="hero-filter">
+  <div class="alignment">
+      <label for="alignment-select">Alignment</label>
+    <select [(ngModel)]="category" name="alignment-select">
+      <option *ngFor="let item of categories" [value]="item">{{ item }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="power-level">Lvl</label>
+    <input type="range" name="power-level" min="0" max="1000" [(ngModel)]="lvlValue" (input)="onLvlRangeChange()">
+    <span>{{ lvlValue }}</span>
+  </div>
+</div>

@@ -17,8 +17,14 @@ export class HeroesComponent implements OnInit {
   ) { }
 
   getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+    this.heroService.getFilteredHeroes()
+      .subscribe(
+        (heroes) => {
+        console.log(heroes);
+        this.heroes = heroes
+      },
+      (err) => console.log(err),
+      );
   }
 
   ngOnInit() {
@@ -26,7 +32,6 @@ export class HeroesComponent implements OnInit {
   }
 
   onHeroClick(hero): void {
-    console.log(hero);
     this.router.navigateByUrl(`/detail/${hero.id}`);
   }
 }
