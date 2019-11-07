@@ -1,4 +1,7 @@
 /* HeroesComponent's private CSS styles */
+.heroes-list-container {
+  min-width: 800px;
+}
 
 ul {
   list-style-type: none;

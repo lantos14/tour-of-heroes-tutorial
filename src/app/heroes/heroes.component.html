@@ -1,16 +1,19 @@
-<h2>Heroes</h2>
-
-<app-hero-filter></app-hero-filter>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <div class="hero-card" (click)="onHeroClick(hero)">
-      <h3>{{ hero.name }}</h3>
-      <div class="hero-data">
-        <p><b>id:</b> {{ hero.id }}</p>
-        <p><b>lvl:</b> {{ hero.powerLevel }}</p>
-        <p><b>align:</b> {{ hero.alignment }}</p>
-        <p><b>movie:</b> {{ hero.hasOwnMovie }}</p>
+<div class="heroes-list-container">
+  <h2>Heroes</h2>
+  
+  <app-hero-filter></app-hero-filter>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <div class="hero-card" (click)="onHeroClick(hero)">
+        <h3>{{ hero.name }}</h3>
+        <div class="hero-data">
+          <p><b>id:</b> {{ hero.id }}</p>
+          <p><b>lvl:</b> {{ hero.powerLevel }}</p>
+          <p><b>align:</b> {{ hero.alignment }}</p>
+          <p><b>movie:</b> {{ hero.hasOwnMovie }}</p>
+        </div>
       </div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>
+

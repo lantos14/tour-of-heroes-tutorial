@@ -20,7 +20,6 @@ export class HeroesComponent implements OnInit {
     this.heroService.getFilteredHeroes()
       .subscribe(
         (heroes) => {
-        console.log(heroes);
         this.heroes = heroes
       },
       (err) => console.log(err),

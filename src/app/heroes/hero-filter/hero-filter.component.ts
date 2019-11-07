@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HeroService } from 'src/app/services/hero/hero.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { HeroService } from 'src/app/services/hero/hero.service';
   templateUrl: './hero-filter.component.html',
   styleUrls: ['./hero-filter.component.css']
 })
-export class HeroFilterComponent implements OnInit, OnChanges {
+export class HeroFilterComponent {
   categories: string[] = ['-', 'good', 'neutral', 'evil'];
   @Input() category = '-';
   @Input() lvlValue = 0;
@@ -14,17 +14,11 @@ export class HeroFilterComponent implements OnInit, OnChanges {
     private heroService: HeroService,
   ) { }
 
-    onLvlRangeChange() {
-      this.heroService.changeFilterLvl(this.lvlValue);
-      console.log('lvlValue: ', this.lvlValue);
-    }
-
-  ngOnInit() {
+  onLvlRangeChange() {
+    this.heroService.changeFilterLvl(this.lvlValue);
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-
+  onAlignmentChange() {
+    this.heroService.changeFilterAlignment(this.category);
   }
-
 }
