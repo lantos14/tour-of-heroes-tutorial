@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageIntervalService } from '../services/message-interval/message-interval.service';
+import { MessageService } from '../services/message/message.service';
 
 @Component({
   selector: 'app-messages-interval',
@@ -9,7 +9,7 @@ import { MessageIntervalService } from '../services/message-interval/message-int
 export class MessagesIntervalComponent implements OnInit {
 
   constructor(
-    public msgInternalService: MessageIntervalService,
+    public messageService: MessageService,
   ) { }
 
   ngOnInit() {

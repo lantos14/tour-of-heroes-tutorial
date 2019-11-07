@@ -1,17 +1,36 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
-  messages: any[] = [];
+  leftyMessages: string[] = [];
+  rigthyMessages: string[] = [];
   constructor() { }
 
-  add(message: any) {
-    this.messages.push(message);
+  // Observables
+
+  simpleObservable = new Observable((observer) => {
+    observer.next('blabla');
+    observer.complete();
+  });
+
+  // left column logger methods
+  addLeftyMsg(message: any) {
+    this.leftyMessages.push(message);
   }
 
-  clear() {
-    this.messages = [];
+  clearLefty() {
+    this.leftyMessages = [];
+  }
+
+  // right column message methods
+  addRightyMsg(message: any) {
+    this.rigthyMessages.push(message);
+  }
+
+  clearRighty() {
+    this.rigthyMessages = [];
   }
 }

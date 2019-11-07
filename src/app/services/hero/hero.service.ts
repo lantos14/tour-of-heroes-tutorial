@@ -11,8 +11,9 @@ import { map, filter, tap } from 'rxjs/operators';
 export class HeroService {
   lvl: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   alignment: BehaviorSubject<string> = new BehaviorSubject<string>('-');
-  constructor() { }
   hasMovie: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  constructor() { }
 
   getHeroes(): Observable<Hero[]> {
     return of(HEROES);

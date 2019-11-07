@@ -1,8 +1,10 @@
-<div *ngIf="messageService.messages.length" class="message-box">
+<div class="message-box">
 
   <h2>Messages</h2>
-  <button class="clear" (click)="messageService.clear()">clear</button>
-  <button class="clear get-interval-btn">getIntervals</button>
-  <div *ngFor='let message of messageService.messages'> {{message}} </div>
+  <button class="clear" (click)="messageService.clearLefty()">clear</button>
+  <button class="clear get-interval-btn" (click)="handleClick()">Start</button>
+  <div *ngFor='let message of messageService.leftyMessages'>
+    {{message}}
+  </div>
 
 </div>
