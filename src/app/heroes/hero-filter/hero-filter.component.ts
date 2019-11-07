@@ -10,6 +10,7 @@ export class HeroFilterComponent {
   categories: string[] = ['-', 'good', 'neutral', 'evil'];
   @Input() category = '-';
   @Input() lvlValue = 0;
+  @Input() hasMovie = false;
   constructor(
     private heroService: HeroService,
   ) { }
@@ -20,5 +21,10 @@ export class HeroFilterComponent {
 
   onAlignmentChange() {
     this.heroService.changeFilterAlignment(this.category);
+  }
+
+  onMovieChange() {
+    this.hasMovie = !this.hasMovie;
+    this.heroService.changeMovieFilter(this.hasMovie);
   }
 }

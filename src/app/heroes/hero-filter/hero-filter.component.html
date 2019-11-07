@@ -15,4 +15,12 @@
     >
     <span>{{ lvlValue }}</span>
   </div>
+
+  <div>
+    <label for="has-movie">Has Own Movie: </label>
+    <input type="checkbox" name="has-movie"
+      [checked]="hasMovie" (change)="onMovieChange()"
+    >
+    <span>{{ hasMovie }}</span>
+  </div>
 </div>

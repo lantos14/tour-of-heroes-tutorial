@@ -3,7 +3,7 @@ import { Observable, of, from, BehaviorSubject, combineLatest } from 'rxjs';
 import { Hero } from '../../hero/hero';
 import { HEROES } from '../../hero/hero-list';
 import { MessageService } from '../message/message.service';
-import { map } from 'rxjs/operators';
+import { map, filter, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class HeroService {
   lvl: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   alignment: BehaviorSubject<string> = new BehaviorSubject<string>('-');
   constructor() { }
-  hasMovie: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
+  hasMovie: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   getHeroes(): Observable<Hero[]> {
     return of(HEROES);
@@ -25,24 +25,26 @@ export class HeroService {
       this.alignment,
       this.hasMovie,
     ).pipe(
-      map(([heros, lvl, alignment, movie]) =>
-        heros.filter(hero => this.filterer(hero, lvl, alignment, movie)),
+      map(([heroes, lvl, alignment, movie]) =>
+        this.filterer(heroes, {lvl, alignment, movie})
       )
     )
   }
 
   filterer(
-    hero: Hero,
-    lvl: number,
-    alignment: string,
-    movie: boolean,
-  ): boolean {
-    let result = true;
-    if (alignment == '-') {
-      result = hero.powerLevel >= lvl
-    } else {
-      result = hero.powerLevel >= lvl && hero.alignment == alignment
+    heroes: Hero[],
+    filters: any,
+  ): Hero[] {
+    let result = heroes;
+
+    result = result.filter(hero => hero.powerLevel >= filters.lvl);
+
+    if (filters.alignment != '-') {
+      result = result.filter(hero => hero.alignment === filters.alignment);
     }
+
+    result = result.filter(hero => hero.hasOwnMovie === filters.movie);
+
     return result;
   }
 
@@ -56,5 +58,9 @@ export class HeroService {
 
   changeFilterAlignment(value: string): void {
     this.alignment.next(value);
+  }
+
+  changeMovieFilter(value: boolean): void {
+    this.hasMovie.next(value);
   }
 }
