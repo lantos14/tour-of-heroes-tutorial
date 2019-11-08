@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Hero } from '../hero/hero';
 import { HeroService } from '../services/hero/hero.service';
 import { Router } from '@angular/router';
@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  styleUrls: ['./heroes.component.css'],
+  // encapsulation: ViewEncapsulation.None,
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
@@ -24,6 +25,21 @@ export class HeroesComponent implements OnInit {
       },
       (err) => console.log(err),
       );
+  }
+
+  getHeroColor(hero: Hero): object {
+    const { alignment } = hero;
+    let color = '';
+
+    if (alignment === 'good') {
+      color = 'blue';
+    } else if (alignment === 'evil') {
+      color = 'red';
+    } else if (alignment === 'neutral') {
+      color = 'gray';
+    }
+
+    return { color };
   }
 
   ngOnInit() {

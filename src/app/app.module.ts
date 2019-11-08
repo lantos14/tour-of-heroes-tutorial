@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroFilterComponent } from './heroes/hero-filter/hero-filter.component';
 import { MessagesIntervalComponent } from './messages-interval/messages-interval.component';
+import { HeroNameColorizerPipe } from './pipes/hero-name-colorizer.pipe';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { MessagesIntervalComponent } from './messages-interval/messages-interval
     MessagesComponent,
     DashboardComponent,
     HeroFilterComponent,
-    MessagesIntervalComponent
+    MessagesIntervalComponent,
+    HeroNameColorizerPipe,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
