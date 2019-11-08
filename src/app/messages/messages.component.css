@@ -2,7 +2,10 @@
 .message-box {
   background-color: #eee;
   padding: 8px;
-  width: 200px;
+  width: 250px;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
 }
 h2 {
   color: red;

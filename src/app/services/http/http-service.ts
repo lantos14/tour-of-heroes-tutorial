@@ -1,7 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
+
+class Response {
+  amount: number;
+  format: string;
+  number: string;
+  number_max: string;
+  text_out: string;
+  time: string;
+  type: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +24,7 @@ export class HttpService {
   fetchData() {
     return this.http.get(`http://www.randomtext.me/api/gibberish/p-1/1-1`)
       .pipe(
-        map(response => response.text_out.slice(3, -6)),
+        map((response:Response) => response.text_out.slice(3, -6)),
         catchError(err => of('error: ', err))
       )
     ;

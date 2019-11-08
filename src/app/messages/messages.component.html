@@ -1,10 +1,11 @@
 <div class="message-box">
 
-  <h2>Messages</h2>
+  <h2>Http Stream 1</h2>
   <button class="clear" (click)="messageService.clearLefty()">clear</button>
-  <button class="clear get-interval-btn" (click)="handleClick()">Start</button>
-  <div *ngFor='let message of messageService.leftyMessages'>
+  <button class="clear" (click)="stopWordStream()">stop</button>
+  <button class="clear get-interval-btn" (click)="getWordStream()">Random Word</button>
+  <p *ngFor='let message of messageService.leftyMessages'>
     {{message}}
-  </div>
+  </p>
 
 </div>

@@ -3,7 +3,10 @@
   background-color: #eee;
   padding: 12px;
   margin: 0 12px;
-  width: 200px;
+  width: 250px;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
 }
 h2 {
   color: red;

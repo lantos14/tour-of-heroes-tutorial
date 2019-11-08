@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,27 +8,17 @@ export class MessageService {
   rigthyMessages: string[] = [];
   constructor() { }
 
-  // ---! Observable Exercises
-
-  // Exercise #1
-  simpleObservable = new Observable((observer) => {
-    observer.next('blabla');
-    observer.complete();
-  });
-
-  // Exercise #2
-  ofObservable = of('of Observable source');
-
-  // Exercise #3
-  // from is used for iterable objects, promises
-  fromObservable = from(['one', 'two', 'three', 'four']);
-
-  // Exercise #4
-
-
   // left column logger methods
-  addLeftyMsg(message: any) {
+  addLeftyMsg(message: string): void {
     this.leftyMessages.push(message);
+  }
+
+  getStream1Length() {
+    return this.leftyMessages.length + 1;
+  }
+
+  getStream2Length() {
+    return this.rigthyMessages.length + 1;
   }
 
   clearLefty() {
