@@ -33,10 +33,10 @@ const routes: Routes = [
     SafeHtmlPipe
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
     RouterModule,
     RouterModule.forRoot(routes),
+    BrowserModule,
+    FormsModule,
     HttpClientModule,
   ],
   exports: [
