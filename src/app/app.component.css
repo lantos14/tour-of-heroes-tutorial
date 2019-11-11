@@ -45,7 +45,3 @@ nav a:hover {
 nav a.active {
   color: #039be5;
 }
-.logger {
-  display: flex;
-  justify-content: space-around;
-}

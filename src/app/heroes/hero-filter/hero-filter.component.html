@@ -18,9 +18,11 @@
 
   <div>
     <label for="has-movie">Has Own Movie: </label>
-    <input type="checkbox" name="has-movie"
-      [checked]="hasMovie" (change)="onMovieChange()"
+    <select name="has-movie"
+    [(ngModel)]="hasMovie" (change)="onMovieChange()"
     >
+      <option *ngFor="let item of movieOptions" [value]="item">{{ item }}</option>
+    </select>
     <span>{{ hasMovie }}</span>
   </div>
 </div>

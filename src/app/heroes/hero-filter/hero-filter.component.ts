@@ -8,9 +8,10 @@ import { HeroService } from 'src/app/services/hero/hero.service';
 })
 export class HeroFilterComponent {
   categories: string[] = ['-', 'good', 'neutral', 'evil'];
+  movieOptions: string[] = ['-', 'yes', 'no'];
   @Input() category = '-';
   @Input() lvlValue = 0;
-  @Input() hasMovie = false;
+  @Input() hasMovie = '-';
   constructor(
     private heroService: HeroService,
   ) { }
@@ -24,7 +25,6 @@ export class HeroFilterComponent {
   }
 
   onMovieChange() {
-    this.hasMovie = !this.hasMovie;
     this.heroService.changeMovieFilter(this.hasMovie);
   }
 }

@@ -3,6 +3,7 @@ import { Observable, of, BehaviorSubject, combineLatest } from 'rxjs';
 import { Hero } from '../../hero/hero';
 import { HEROES } from '../../hero/hero-list';
 import { map } from 'rxjs/operators';
+import Filters from 'src/app/hero/filter';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class HeroService {
   lvl: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   alignment: BehaviorSubject<string> = new BehaviorSubject<string>('-');
-  hasMovie: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  hasMovie: BehaviorSubject<string> = new BehaviorSubject<string>('-');
 
   constructor() { }
 
@@ -33,7 +34,7 @@ export class HeroService {
 
   filterer(
     heroes: Hero[],
-    filters: any,
+    filters: Filters,
   ): Hero[] {
     let result = heroes;
 
@@ -43,7 +44,9 @@ export class HeroService {
       result = result.filter(hero => hero.alignment === filters.alignment);
     }
 
-    result = result.filter(hero => hero.hasOwnMovie === filters.movie);
+    if (filters.movie != '-') {
+      result = result.filter(hero => hero.hasOwnMovie === filters.movie);
+    }
 
     return result;
   }
@@ -60,7 +63,7 @@ export class HeroService {
     this.alignment.next(value);
   }
 
-  changeMovieFilter(value: boolean): void {
+  changeMovieFilter(value: string): void {
     this.hasMovie.next(value);
   }
 }

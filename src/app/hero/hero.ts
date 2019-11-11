@@ -3,5 +3,5 @@ export class Hero {
   name: string;
   powerLevel: number;
   alignment: string;
-  hasOwnMovie: boolean;
+  hasOwnMovie: string;
 }

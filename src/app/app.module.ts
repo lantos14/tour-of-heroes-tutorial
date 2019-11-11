@@ -12,12 +12,14 @@ import { HeroFilterComponent } from './heroes/hero-filter/hero-filter.component'
 import { MessagesIntervalComponent } from './messages-interval/messages-interval.component';
 import { HeroNameColorizerPipe } from './pipes/hero-name-colorizer.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { LoggerComponent } from './logger/logger.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'heroes', component: HeroesComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: HeroDetailComponent }
+  { path: 'detail/:id', component: HeroDetailComponent },
+  { path: 'logger', component: LoggerComponent }
 ];
 
 @NgModule({
@@ -30,7 +32,8 @@ const routes: Routes = [
     MessagesComponent,
     MessagesIntervalComponent,
     HeroNameColorizerPipe,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    LoggerComponent
   ],
   imports: [
     RouterModule,
