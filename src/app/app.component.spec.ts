@@ -58,4 +58,27 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Tour of Heroes');
   });
+
+  it(`should have an h1 tag with text 'Tour of Heroes'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const app = fixture.debugElement.nativeElement;
+    expect(app.querySelector('h1').textContent).toEqual('Tour of Heroes');
+  });
+
+  it(`should render nav element`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const app = fixture.nativeElement;
+    expect(app.querySelectorAll("nav a").length).toBe(2);
+  });
+
+  it(`should render logger element`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const app = fixture.debugElement.nativeElement;
+    expect(app.querySelector('.logger')).toBeTruthy();
+  });
 });
+
+
