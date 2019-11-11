@@ -14,16 +14,16 @@ export class HeroesComponent implements OnInit {
 
   constructor(
     private heroService: HeroService,
-    private router: Router,
+    public router: Router,
   ) { }
 
   getHeroes(): void {
     this.heroService.getFilteredHeroes()
       .subscribe(
         (heroes) => {
-        this.heroes = heroes
-      },
-      (err) => console.log(err),
+          this.heroes = heroes
+        },
+        (err) => console.log(err),
       );
   }
 
@@ -47,6 +47,8 @@ export class HeroesComponent implements OnInit {
   }
 
   onHeroClick(hero): void {
-    this.router.navigateByUrl(`/detail/${hero.id}`);
+    if (hero.id) {
+      this.router.navigateByUrl(`/detail/${hero.id}`);
+    }
   }
 }

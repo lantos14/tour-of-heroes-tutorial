@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, from, BehaviorSubject, combineLatest } from 'rxjs';
+import { Observable, of, BehaviorSubject, combineLatest } from 'rxjs';
 import { Hero } from '../../hero/hero';
 import { HEROES } from '../../hero/hero-list';
-import { MessageService } from '../message/message.service';
-import { map, filter, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
