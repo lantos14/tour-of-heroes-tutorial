@@ -1,0 +1,8 @@
+.buttons {
+  display: flex;
+}
+
+p {
+  max-width: 330px;
+  word-wrap: normal;
+}

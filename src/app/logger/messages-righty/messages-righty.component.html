@@ -1,0 +1,13 @@
+<div class="message-box">
+  <h2>Http Stream Righty</h2>
+  
+  <button class="clear" (click)="messageService.clearRighty()">clear</button>
+  <button class="clear" (click)="stopWordStream()">stop</button>
+  <button class="clear get-interval-btn" (click)="getWordStream()">Random Word</button>
+  
+  <div class="content">
+    <p *ngFor="let message of messageService.rigthyMessages">
+      {{ message }}
+    </p>
+  </div>
+</div>

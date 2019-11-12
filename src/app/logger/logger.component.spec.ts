@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoggerComponent } from './logger.component';
-import { MessagesLeftyComponent } from '../messages-lefty/messages-lefty.component';
-import { MessagesRighty } from '../messages-righty/messages-righty.component';
+import { MessagesLeftyComponent } from './messages-lefty/messages-lefty.component';
+import { MessagesRighty } from './messages-righty/messages-righty.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('LoggerComponent', () => {
