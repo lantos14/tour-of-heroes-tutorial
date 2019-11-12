@@ -12,6 +12,7 @@ export class HeroFilterComponent {
   @Input() category = '-';
   @Input() lvlValue = 0;
   @Input() hasMovie = '-';
+
   constructor(
     private heroService: HeroService,
   ) { }
