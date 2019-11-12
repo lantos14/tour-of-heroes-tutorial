@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoggerComponent } from './logger.component';
+import { MessagesComponent } from '../messages/messages.component';
+import { MessagesIntervalComponent } from '../messages-interval/messages-interval.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('LoggerComponent', () => {
   let component: LoggerComponent;
@@ -8,7 +11,12 @@ describe('LoggerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoggerComponent ]
+      imports: [ HttpClientTestingModule ],
+      declarations: [ 
+        LoggerComponent,
+        MessagesComponent,
+        MessagesIntervalComponent,
+      ]
     })
     .compileComponents();
   }));

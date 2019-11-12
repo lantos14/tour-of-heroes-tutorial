@@ -70,14 +70,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const app = fixture.nativeElement;
-    expect(app.querySelectorAll("nav a").length).toBe(2);
-  });
-
-  it(`should render logger element`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const app = fixture.nativeElement;
-    expect(app.querySelector('.logger')).toBeTruthy();
+    expect(app.querySelectorAll("nav a").length).toBe(3);
   });
 });
 
