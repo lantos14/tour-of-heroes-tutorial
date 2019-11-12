@@ -1,25 +1,24 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   HttpClientTestingModule,
-  HttpTestingController
 } from '@angular/common/http/testing';
 
-import { MessagesComponent } from './messages.component';
+import { MessagesLeftyComponent } from './messages-lefty.component';
 
-describe('MessagesComponent', () => {
-  let component: MessagesComponent;
-  let fixture: ComponentFixture<MessagesComponent>;
+describe('MessagesLeftyComponent', () => {
+  let component: MessagesLeftyComponent;
+  let fixture: ComponentFixture<MessagesLeftyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule ],
-      declarations: [ MessagesComponent ]
+      declarations: [ MessagesLeftyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MessagesComponent);
+    fixture = TestBed.createComponent(MessagesLeftyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

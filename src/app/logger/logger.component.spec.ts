@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoggerComponent } from './logger.component';
-import { MessagesComponent } from '../messages/messages.component';
-import { MessagesIntervalComponent } from '../messages-interval/messages-interval.component';
+import { MessagesLeftyComponent } from '../messages-lefty/messages-lefty.component';
+import { MessagesRighty } from '../messages-righty/messages-righty.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('LoggerComponent', () => {
@@ -14,8 +14,8 @@ describe('LoggerComponent', () => {
       imports: [ HttpClientTestingModule ],
       declarations: [ 
         LoggerComponent,
-        MessagesComponent,
-        MessagesIntervalComponent,
+        MessagesLeftyComponent,
+        MessagesRighty,
       ]
     })
     .compileComponents();

@@ -6,10 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesLeftyComponent } from './messages-lefty/messages-lefty.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroFilterComponent } from './heroes/hero-filter/hero-filter.component';
-import { MessagesIntervalComponent } from './messages-interval/messages-interval.component';
+import { MessagesRighty } from './messages-righty/messages-righty.component';
 import { HeroNameColorizerPipe } from './pipes/hero-name-colorizer.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { LoggerComponent } from './logger/logger.component';
@@ -29,8 +29,8 @@ const routes: Routes = [
     HeroDetailComponent,
     HeroesComponent,
     HeroFilterComponent,
-    MessagesComponent,
-    MessagesIntervalComponent,
+    MessagesLeftyComponent,
+    MessagesRighty,
     HeroNameColorizerPipe,
     SafeHtmlPipe,
     LoggerComponent
@@ -43,7 +43,7 @@ const routes: Routes = [
     HttpClientModule,
   ],
   exports: [
-    MessagesComponent,
+    MessagesLeftyComponent,
   ],
   bootstrap: [AppComponent]
 })

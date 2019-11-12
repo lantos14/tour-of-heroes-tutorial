@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MessagesIntervalComponent } from './messages-interval.component';
+import { MessagesRighty } from './messages-righty.component';
 
 describe('MessagesIntervalComponent', () => {
-  let component: MessagesIntervalComponent;
-  let fixture: ComponentFixture<MessagesIntervalComponent>;
+  let component: MessagesRighty;
+  let fixture: ComponentFixture<MessagesRighty>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MessagesIntervalComponent ]
+      declarations: [ MessagesRighty ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MessagesIntervalComponent);
+    fixture = TestBed.createComponent(MessagesRighty);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

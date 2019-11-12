@@ -8,11 +8,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroFilterComponent } from './heroes/hero-filter/hero-filter.component';
-import { MessagesComponent } from './messages/messages.component';
-import { MessagesIntervalComponent } from './messages-interval/messages-interval.component';
+import { MessagesLeftyComponent } from './messages-lefty/messages-lefty.component';
+import { MessagesRighty } from './messages-righty/messages-righty.component';
 import {
   HttpClientTestingModule,
-  HttpTestingController
 } from '@angular/common/http/testing';
 
 import { HeroNameColorizerPipe } from './pipes/hero-name-colorizer.pipe';
@@ -39,8 +38,8 @@ describe('AppComponent', () => {
         HeroDetailComponent,
         HeroesComponent,
         HeroFilterComponent,
-        MessagesComponent,
-        MessagesIntervalComponent,
+        MessagesLeftyComponent,
+        MessagesRighty,
         HeroNameColorizerPipe,
         SafeHtmlPipe
       ],
