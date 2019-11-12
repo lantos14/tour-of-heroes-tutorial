@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'src/app/services/message/message.service';
 
 @Component({
@@ -8,21 +8,14 @@ import { MessageService } from 'src/app/services/message/message.service';
 })
 export class MessagesCombinerComponent {
   combinedTextResult = 'result: ';
-  subscription;
 
   constructor(
     public messageService: MessageService,
   ) { }
 
-  startSub() {    
-    this.subscription = this.messageService.source.subscribe(
-      res => this.combinedTextResult += `${res} `
-    );
-  }
-
-  cancelSub() {
-    this.subscription.unsubscribe();
-    console.log('combined subscription has been stopped');
+  handleStartClick() {
+    console.log('handleStartClick is clicked');
+    this.messageService.startStreamButton.next();
   }
 
 }

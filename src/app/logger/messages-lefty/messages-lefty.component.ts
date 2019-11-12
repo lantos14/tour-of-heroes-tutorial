@@ -14,12 +14,12 @@ export class MessagesLeftyComponent {
   ) { }
 
   getWordStream() {
-    this.sourceSubscription = this.messageService.source.subscribe(
-      (res) => {
-        this.messageService.addLeftyMsg(`${this.messageService.getStream1Length()}. ${res}`)
-      },
-      (err) =>console.log('subscribe error: ', err)
-    )
+    // this.sourceSubscription = this.messageService.source.subscribe(
+    //   (res) => {
+    //     this.messageService.addLeftyMsg(`${this.messageService.getStream1Length()}. ${res}`)
+    //   },
+    //   (err) =>console.log('subscribe error: ', err)
+    // )s
   }
 
   stopWordStream() {

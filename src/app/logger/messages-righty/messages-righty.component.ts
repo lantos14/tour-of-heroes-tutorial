@@ -18,12 +18,12 @@ export class MessagesRighty {
   ) { }
 
   getWordStream() {
-    this.sourceSubscription = this.messageService.source.subscribe(
-      (res) => {
-        this.messageService.addRightyMsg(`${this.messageService.getStream2Length()}. ${res}`)
-      },
-      (err) =>console.log('subscribe error: ', err)
-    )
+    // this.sourceSubscription = this.messageService.source.subscribe(
+    //   (res) => {
+    //     this.messageService.addRightyMsg(`${this.messageService.getStream2Length()}. ${res}`)
+    //   },
+    //   (err) =>console.log('subscribe error: ', err)
+    // )
   }
 
   stopWordStream() {

@@ -3,8 +3,9 @@
   <h2>Http Stream Combiner</h2>
   
   <div class="buttons">
-    <button class="clear" (click)="startSub()">Start streaming</button>
-    <button class="clear" (click)="cancelSub()">Stop streaming</button>
+    <button #combineButton (click)="combine()">Combine</button>
+    <button (click)="this.messageService.startStreamButton.next()">Start</button>
+    <button (click)="cancelSub()">Stop</button>
   </div>
 
   <div class="content">
